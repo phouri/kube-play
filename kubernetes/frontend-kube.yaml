@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
-type: NodePort
 metadata:
   name: frontend
 spec:
+  type: NodePort
   ports:
   - port: 8080
   selector:
