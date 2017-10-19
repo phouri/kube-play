@@ -4,8 +4,8 @@ metadata:
   name: db-secret
 type: Opaque
 data:
-  username: ZnJvbnRlbmQ=
-  password: ZnJvbnRlbmQ=
+  username: cm9vdA==
+  password: cm9vdA==
   host: bXlzcWwtcHJveHk=
   port: MzMwNg==
   db: ZGV2

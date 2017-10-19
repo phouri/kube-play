@@ -22,7 +22,9 @@ spec:
       labels:
         app: frontend
     spec:
-      containers:
+      imagePullSecrets:
+      - name: myregistrykey
+      containers:      
       - image: gcr.io/hourinetwork/frontend:latest
         name: frontend
         env:
@@ -50,6 +52,7 @@ spec:
           valueFrom:
             secretKeyRef:
               name: db-secret
-              key: password
+              key: password        
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
