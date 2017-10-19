@@ -25,9 +25,8 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: frontend:latest
+      - image: gcr.io/hourinetwork/frontend:latest
         name: frontend
-        imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_PORT
           valueFrom:
