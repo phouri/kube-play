@@ -1,5 +1,6 @@
 apiVersion: v1
 kind: Service
+type: NodePort
 metadata:
   name: frontend
 spec:
@@ -7,7 +8,6 @@ spec:
   - port: 8080
   selector:
     app: frontend
-  clusterIP: None
 ---
 apiVersion: apps/v1beta1
 kind: Deployment
