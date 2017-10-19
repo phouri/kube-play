@@ -34,3 +34,14 @@ spec:
         - name: cloudsql
           emptyDir:
       # [END volumes]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-proxy
+spec:
+  ports:
+  - port: 3306
+  selector:
+    app: mysql-proxy
+  type: NodePort
