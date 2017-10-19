@@ -16,4 +16,4 @@ app.listen(8080, (err) => {
   }
 });
 
-require('./server/db');
+// require('./server/db');
