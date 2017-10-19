@@ -4,16 +4,16 @@ metadata:
   name: db-secret
 type: Opaque
 data:
-  username: cm9vdA==
-  password: cm9vdA==
-  host: bXlzcWwK
+  username: ZnJvbnRlbmQK
+  password: ZnJvbnRlbmQK
+  host: bXlzcWwtcHJveHkK
   port: MzMwNgo=
   db: ZGV2Cg==
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mysql-proxy
 spec:
   ports:
   - port: 3306

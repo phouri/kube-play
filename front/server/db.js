@@ -8,8 +8,10 @@ const connection = mysql.createConnection({
   password: config.password,
   port: config.port,
 });
+console.log('Connecting!', connection);
 
 connection.query(`CREATE DATABASE IF NOT EXISTS ${config.db}`, async (err) => {
+  console.error('Error creating db', err);
   if (err) {
     throw err;
   }
@@ -23,7 +25,7 @@ connection.query(`CREATE DATABASE IF NOT EXISTS ${config.db}`, async (err) => {
 
   try {
     const db = await orm.connectAsync(opts);
-    console.log(db);
+    console.log('Connected!', db);
     const Person = db.define('person', {
       name: String,
       surname: String,
