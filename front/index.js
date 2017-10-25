@@ -1,7 +1,14 @@
 const express = require('express');
 
 const app = express();
-
+function ensureSec(req, res, next) {
+  if (req.headers['x-forwarded-proto'] == 'http') {
+    return res.redirect('https://' + req.url);
+  }
+  next();
+}
+app.enable('trust proxy');
+app.use(ensureSec);
 app.use(express.static('dist'));
 
 app.all('*', function(req,res) {
@@ -15,5 +22,5 @@ app.listen(8080, (err) => {
     console.log('Listening on 8080');
   }
 });
-console.log('Starting db connection');
-require('./server/db');
+// console.log('Starting db connection');
+// require('./server/db');

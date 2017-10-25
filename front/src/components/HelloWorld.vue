@@ -2,12 +2,19 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    
+    <Loader />
+    <Async />
   </div>
 </template>
 
 <script>
+import Async from './async-example'
+import Loader from './Loader'
 export default {
+  components: {
+    Async,
+    Loader
+  },
   name: 'HelloWorld',
   data () {
     return {
