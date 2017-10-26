@@ -2,14 +2,24 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "k8s-ingress"
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "gce"
 spec:
+  tls:
+  - secretName: hourinetwork-tls
+    hosts:
+      - hourinetwork.com
+      - front.hourinetwork.com 
   backend:
     serviceName: frontend
     servicePort: 8080
   rules:
-  - http:
+  - host: front.hourinetwork.com
+    http:
       paths:
-      - path: /
+      - path: /*
         backend:
           serviceName: frontend
           servicePort: 8080
