@@ -23,5 +23,6 @@ app.listen(8080, (err) => {
     console.log('Listening on 8080');
   }
 });
+
 // console.log('Starting db connection');
 // require('./server/db');
