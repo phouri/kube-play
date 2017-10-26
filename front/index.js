@@ -1,9 +1,9 @@
 const express = require('express');
 
 const app = express();
-function ensureSec(req, res, next) {
+function ensureSec(req, res, next) {  
   if (req.headers['x-forwarded-proto'] == 'http') {
-    return res.redirect('https://' + req.url);
+    return res.redirect(`https://${req.hostname}/${req.url}`);
   }
   next();
 }
