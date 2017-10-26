@@ -27,6 +27,13 @@ spec:
       containers:      
       - image: gcr.io/hourinetwork/frontend:latest
         name: frontend
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+          limits:
+            memory: "512Mi"
+            cpu: "150m"
         env:
         - name: MYSQL_PORT
           valueFrom:
